@@ -3,45 +3,66 @@
 
 <head>
     <title></title>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-     class Cachorro(){
-         constructor(){
-             this.cor = 'caramelo'
-             this.tamanho = 30
-             this.orelhas = 'Grandes e caídas'
-         }
-
-         correr(){
-            console.log('Dorrer')
-         }
-         dormir(){
+    class Animal{
+        constructor(){
+            this.cor = ''
+            this.tamanho = null
+            this.peso = null
+        }
+        dormir(){
             console.log('Dormir')
-         }
-         rosnar(){
-            console.log('Rosnar')
-         }
-     }
+        }
+    }
+    class Cachorro extends Animal{
+        constructor(){
+                super()
+                this.orelhas = 'Grandes e caídas'
+            }
+            //metodos
+            correr(){
+                console.log('Correr')
+            }
+            rosnar(){
+                console.log('Rosnar')
+            }
+        }
 
-     class Passaro{
-         constructor](){
-             this.cor = 'vermelho'
-             this.tamanho = 10
-             this.bico = 'curto'
+        class Passaro extends Animal{
+            constructor(){
+                super()
+                this.bico = 'curto'
+            }
+
+            voar(){
+                console.log('Voar')
+            }
+
+        }
+         class Papagaio extends Passaro{
+             constructor(){
+                super()
+                 this.sabeFalar = true
+             }
+             falar(){
+                 console.log('Falar');
+             }
+           
          }
 
-         voar(){
-            console.log('Voar')
-         }
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
 
-         dormir(){
-            console.log('Dormir')
-         }
-     }
+        /*cachorro.dormir()
+        passaro.dormir()
+        papagaio.falar()
+        papagaio.voar()*/
 
-     let cachorro = new Cachorro()
-     let passaro = new Passaro()
+        console.log(cachorro)
+      console.log(passaro)
+      console.log(papagaio)
     </script>
 </head>
 
